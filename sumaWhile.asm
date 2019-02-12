@@ -1,0 +1,19 @@
+
+.text
+main:
+	li $s0,1 #Counter
+	li $s2,0 #Variable
+	li $s3,0 #C
+	li $t0, 4 #constant to divide
+	
+while:
+	jal suma
+	la $s0,($s3)
+	div $s2,$s1,$t0
+	slti $t1,$s2,20
+	beq $t1,$zero,exit
+suma: 
+	li $s3,0
+	add $s3,$s0,$s0
+	jr $ra
+exit:
